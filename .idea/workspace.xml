@@ -4,96 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87784f04-f1bf-4220-a252-7d7a03b941f4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/UrbanProject.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/OnlineShop/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/OnlineShop/asgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/OnlineShop/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/OnlineShop/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/OnlineShop/wsgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/db.sqlite3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/manage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/media/products_images/Adidas-hoodie.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/media/products_images/Black-Dr-Martens-shoes.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/media/products_images/Black-Nike-Heritage-backpack.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/media/products_images/Blue-jacket-The-North-Face.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/media/products_images/Brown-sports-oversized-top-ASOS-DESIGN.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/media/products_images/Dark-blue-wide-leg-ASOs-DESIGN-trousers.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/media/users_images/my_avatar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/products/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/products/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/products/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/products/fixtures/categories.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/products/fixtures/products.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/products/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/products/migrations/0002_alter_product_image_alter_product_price.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/products/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/products/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/products/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/products/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/products/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/static/vendor/bootstrap/css/bootstrap-grid.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/static/vendor/bootstrap/css/bootstrap-grid.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/static/vendor/bootstrap/css/bootstrap-grid.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/static/vendor/bootstrap/css/bootstrap-grid.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/static/vendor/bootstrap/css/bootstrap-reboot.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/static/vendor/bootstrap/css/bootstrap-reboot.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/static/vendor/bootstrap/css/bootstrap-reboot.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/static/vendor/bootstrap/css/bootstrap-reboot.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/static/vendor/bootstrap/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/static/vendor/bootstrap/css/bootstrap.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/static/vendor/bootstrap/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/static/vendor/bootstrap/css/bootstrap.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/static/vendor/bootstrap/js/bootstrap.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/static/vendor/bootstrap/js/bootstrap.bundle.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/static/vendor/bootstrap/js/bootstrap.bundle.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/static/vendor/bootstrap/js/bootstrap.bundle.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/static/vendor/bootstrap/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/static/vendor/bootstrap/js/bootstrap.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/static/vendor/bootstrap/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/static/vendor/bootstrap/js/bootstrap.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/static/vendor/css/auth.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/static/vendor/css/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/static/vendor/css/orders.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/static/vendor/css/products.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/static/vendor/css/profile.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/static/vendor/fontawesome/fontawesome-icons.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/static/vendor/img/slides/slide-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/static/vendor/img/slides/slide-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/static/vendor/img/slides/slide-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/static/vendor/img/users/default_avatar.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/static/vendor/img/wallpaper.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/static/vendor/jquery/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/static/vendor/jquery/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/static/vendor/jquery/jquery.min.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/static/vendor/jquery/jquery.slim.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/static/vendor/jquery/jquery.slim.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/static/vendor/jquery/jquery.slim.min.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/static/vendor/js/auth-admin.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/static/vendor/js/datatable.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/templates/products/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/templates/products/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/templates/products/products.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/templates/users/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/templates/users/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/templates/users/profile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/templates/users/registration.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/users/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/users/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/users/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/users/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/users/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/users/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/users/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/users/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/users/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShop/users/views.py" afterDir="false" />
+    <list default="true" id="87784f04-f1bf-4220-a252-7d7a03b941f4" name="Changes" comment="Демо-версия (начало работы: 1 сентября)">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineShop/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShop/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +42,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Python_Education/UrbanProject",
+    "last_opened_file_path": "C:/Python_Education/UrbanPGsql",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
@@ -161,9 +74,20 @@
       <option name="presentableId" value="Default" />
       <updated>1725270126369</updated>
     </task>
+    <task id="LOCAL-00001" summary="Демо-версия (начало работы: 1 сентября)">
+      <option name="closed" value="true" />
+      <created>1725473745939</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1725473745939</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Демо-версия (начало работы: 1 сентября)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Демо-версия (начало работы: 1 сентября)" />
   </component>
 </project>
