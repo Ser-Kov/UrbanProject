@@ -2,6 +2,7 @@ from django.db import models
 from users.models import User
 
 
+# Модель с категориями (class Meta нужен для корректного отображения названия модели в админ-панели)
 class ProductCategory(models.Model):
     name = models.CharField(max_length=128)
     description = models.TextField(null=True, blank=True)
@@ -14,6 +15,8 @@ class ProductCategory(models.Model):
         return self.name
 
 
+# Модель продуктов. Связываем с категориями (ForeignKey) - каждый продукт будет иметь одну из категорий.
+# Продуктов много - категория одна.
 class Product(models.Model):
     name = models.CharField(max_length=256)
     description = models.TextField()
@@ -30,11 +33,12 @@ class Product(models.Model):
         return f'Продукт: {self.name} | Цена: {self.price} | Категория: {self.category.name}'
 
 
+# Создаем класс, определяя в нем новые методы QuerySet для менеджера Basket.objects
 class BasketQuerySet(models.QuerySet):
-    def total_sum(self):
+    def total_sum(self): # Возвращает итоговую сумму цен всех продуктов в корзине
         return sum(basket.sum() for basket in self)
 
-    def total_quantity(self):
+    def total_quantity(self): # Возвращает итоговое количество продуктов в корзине
         return sum(basket.quantity for basket in self)
 
 
@@ -44,10 +48,10 @@ class Basket(models.Model):
     quantity = models.PositiveSmallIntegerField(default=0)
     created_timestamp = models.DateTimeField(auto_now_add=True)
 
-    objects = BasketQuerySet.as_manager()
+    objects = BasketQuerySet.as_manager() # Добавляем в objects созданный класс-менеджер с новыми методами
 
     def __str__(self):
         return f'Корзина пользователя {self.user.username} | Продукт: {self.product.name}'
 
-    def sum(self):
+    def sum(self): # Возвращает итоговую сумму конкретного продукта в корзине
         return self.product.price * self.quantity

@@ -111,6 +111,7 @@ STATICFILES_DIRS = (
     BASE_DIR / 'static',
 )
 
+# Добавляем глобальный url-адрес и корневую папку для медиафайлов
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
@@ -119,6 +120,8 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Users
+# Привязываем модель User к готовой джанго-таблице пользователей
 AUTH_USER_MODEL = 'users.User'
+
+# Добавляем путь для декоратора доступа login_required
 LOGIN_URL = '/users/login/'
