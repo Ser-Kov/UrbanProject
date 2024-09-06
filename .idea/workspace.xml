@@ -4,21 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87784f04-f1bf-4220-a252-7d7a03b941f4" name="Changes" comment="Добавлен requirements.txt для контроля версий">
+    <list default="true" id="87784f04-f1bf-4220-a252-7d7a03b941f4" name="Changes" comment="Добавлены комментарии для понимания работы приложений">
+      <change afterPath="$PROJECT_DIR$/OnlineShop/templates/users/create_order.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineShop/OnlineShop/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShop/OnlineShop/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineShop/OnlineShop/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShop/OnlineShop/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineShop/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShop/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineShop/media/users_images/my_avatar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineShop/products/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShop/products/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineShop/products/fixtures/categories.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineShop/products/fixtures/products.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineShop/products/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShop/products/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineShop/products/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShop/products/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineShop/products/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShop/products/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineShop/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShop/users/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineShop/users/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShop/users/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineShop/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShop/users/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineShop/static/vendor/css/orders.css" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShop/static/vendor/css/orders.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineShop/templates/products/baskets.html" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShop/templates/products/baskets.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineShop/users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShop/users/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineShop/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShop/users/views.py" afterDir="false" />
     </list>
@@ -49,19 +40,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Python_Education/UrbanPaginator&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Python.module_11_3.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Python_Education/Urban_University",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Python_Education\UrbanProject\OnlineShop\static" />
       <recent name="C:\Python_Education\UrbanProject\OnlineShop" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -71,6 +64,35 @@
       <recent name="C:\Python_Education\UrbanProject\OnlineShop" />
       <recent name="C:\Python_Education\UrbanProject\OnlineShop\products" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="module_11_3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="UrbanProject" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/AppData/Local/Temp/Rar$DIa2116.18907" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/AppData/Local/Temp/Rar$DIa2116.18907/module_11_3.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.module_11_3" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -128,7 +150,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725560128490</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Добавлены комментарии для понимания работы приложений">
+      <option name="closed" value="true" />
+      <created>1725569004221</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1725569004221</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -137,6 +167,7 @@
     <MESSAGE value="Добавил модель Корзины и контроллеры. Появилась возможность добавлять товары из каталога в корзину. Изменил шаблон с корзиной на отображение данных корзины авторизованного юзера. Добавил декоратор доступа (login_required), чтобы только авторизованный пользователь мог добавлять продукты в корзину." />
     <MESSAGE value="Теперь в каталоге можно перемещаться по категориям слева. Сделал навигацию по страницам (так как товаров немного, сделал выкладку по 3 объекта). Также настроил админ-панель, работать в ней стало комфортнее. Корзина определенного пользователя отображается в таблице пользователя (применил admin.TabularInline к BasketAdmin), это возможно потому, что корзина и пользователь связаны через ForeignKey." />
     <MESSAGE value="Добавлен requirements.txt для контроля версий" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлен requirements.txt для контроля версий" />
+    <MESSAGE value="Добавлены комментарии для понимания работы приложений" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлены комментарии для понимания работы приложений" />
   </component>
 </project>
