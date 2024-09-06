@@ -51,7 +51,25 @@ class Basket(models.Model):
     objects = BasketQuerySet.as_manager() # Добавляем в objects созданный класс-менеджер с новыми методами
 
     def __str__(self):
-        return f'Корзина пользователя {self.user.username} | Продукт: {self.product.name}'
+        return f'Корзина пользователя {self.user.username} | Продукт: {self.product.name}| Количество: {self.quantity}'
 
     def sum(self): # Возвращает итоговую сумму конкретного продукта в корзине
         return self.product.price * self.quantity
+
+
+class Orders(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    full_name = models.CharField(max_length=50)
+    email = models.EmailField()
+    address = models.CharField(max_length=128)
+    city = models.CharField(max_length=30)
+    index = models.CharField(max_length=6)
+    products = models.TextField(null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'order'
+        verbose_name_plural = 'orders'
+
+    def __str__(self):
+        return f'Заказ от {self.user.username}. Город: {self.city}'
+

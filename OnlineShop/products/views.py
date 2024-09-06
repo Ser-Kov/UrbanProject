@@ -1,7 +1,11 @@
+import json
 from django.shortcuts import render, HttpResponseRedirect
-from products.models import ProductCategory, Product, Basket
+from products.models import ProductCategory, Product, Basket, Orders
+from products.forms import CreateOrderForm
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
+from django.contrib import messages
+
 
 
 # Контроллеры
@@ -53,3 +57,45 @@ def basket_remove(request, basket_id):
 
     return HttpResponseRedirect(request.META['HTTP_REFERER'])
 
+
+def create_order(request):
+    title = 'Оформление заказа'
+    if request.method == 'POST':
+        form = CreateOrderForm(data=request.POST)
+        if form.is_valid():
+            full_name = form.cleaned_data['full_name']
+            email = form.cleaned_data['email']
+            address = form.cleaned_data['address']
+            city = form.cleaned_data['city']
+            index = form.cleaned_data['index']
+
+            basket_items = Basket.objects.filter(user=request.user)
+            products_list = []
+            for item in basket_items:
+                products_list.append(
+                    {'product': item.product.name,
+                     'quantity': item.quantity}
+                )
+            products_json = json.dumps(products_list, ensure_ascii=False)
+
+            Orders.objects.create(
+                user=request.user,
+                full_name=full_name,
+                email=email,
+                address=address,
+                city=city,
+                index=index,
+                products=products_json)
+
+            Basket.objects.filter(user=request.user).delete()
+
+            messages.success(request, 'Заказ оформлен!')
+            return HttpResponseRedirect(request.META['HTTP_REFERER'])
+    else:
+        form = CreateOrderForm()
+    context = {
+        'title': title,
+        'baskets': Basket.objects.filter(user=request.user),
+        'form': form
+    }
+    return render(request, 'products/create_order.html', context)

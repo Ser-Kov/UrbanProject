@@ -73,11 +73,3 @@ def logout(request):
     auth.logout(request)
     return HttpResponseRedirect(reverse('index'))
 
-
-def create_order(request):
-    title = 'Оформление заказа'
-    context = {
-        'title': title,
-        'baskets': Basket.objects.filter(user=request.user)
-    }
-    return render(request, 'users/create_order.html', context)

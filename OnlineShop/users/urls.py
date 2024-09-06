@@ -1,5 +1,6 @@
 from django.urls import path
-from users.views import login, registration, profile, logout, create_order
+from users.views import login, registration, profile, logout
+from products.views import create_order
 
 # Указываем приложение, с которым будут связаны пути.
 app_name = 'users'

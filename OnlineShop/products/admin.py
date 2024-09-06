@@ -1,9 +1,10 @@
 from django.contrib import admin
-from products.models import ProductCategory, Product, Basket
+from products.models import ProductCategory, Product, Basket, Orders
 
 # Регистрируем модели в админ-панели
 admin.site.register(ProductCategory)
 # admin.site.register(Product)
+admin.site.register(Orders)
 
 
 # Определяем представление таблицы Product в админ-панели
