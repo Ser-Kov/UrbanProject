@@ -1,5 +1,6 @@
 from django.db import models
 from users.models import User
+from rest_framework import serializers
 
 
 # Модель с категориями (class Meta нужен для корректного отображения названия модели в админ-панели)
@@ -55,6 +56,17 @@ class Basket(models.Model):
 
     def sum(self): # Возвращает итоговую сумму конкретного продукта в корзине
         return self.product.price * self.quantity
+
+
+class BasketSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Basket
+        fields = ('product.name', 'product.price', 'quantity')
+
+    def encode(self):
+        from rest_framework.renderers import JSONRenderer
+        json = JSONRenderer().render(self.data)
+        return json
 
 
 class Orders(models.Model):

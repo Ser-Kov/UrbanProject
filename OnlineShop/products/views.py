@@ -1,10 +1,11 @@
 import json
 from django.shortcuts import render, HttpResponseRedirect
-from products.models import ProductCategory, Product, Basket, Orders
+from products.models import ProductCategory, Product, Basket, Orders, BasketSerializer
 from products.forms import CreateOrderForm
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.contrib import messages
+
 
 
 
@@ -69,14 +70,16 @@ def create_order(request):
             city = form.cleaned_data['city']
             index = form.cleaned_data['index']
 
-            basket_items = Basket.objects.filter(user=request.user)
-            products_list = []
-            for item in basket_items:
-                products_list.append(
-                    {'product': item.product.name,
-                     'quantity': item.quantity}
-                )
-            products_json = json.dumps(products_list, ensure_ascii=False)
+            # basket_items = Basket.objects.filter(user=request.user)
+            # products_list = []
+            # for item in basket_items:
+            #     products_list.append(
+            #         {'product': item.product.name,
+            #          'quantity': item.quantity}
+            #     )
+            # products_json = json.dumps(products_list, ensure_ascii=False)
+
+            basket_sr = BasketSerializer(Basket.objects.filter(user=request.user))
 
             Orders.objects.create(
                 user=request.user,
@@ -85,7 +88,7 @@ def create_order(request):
                 address=address,
                 city=city,
                 index=index,
-                products=products_json)
+                products=BasketSerializer.encode(basket_sr.encode()))
 
             Basket.objects.filter(user=request.user).delete()
 
