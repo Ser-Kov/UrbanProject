@@ -79,7 +79,7 @@ def create_order(request):
             #     )
             # products_json = json.dumps(products_list, ensure_ascii=False)
 
-            basket_sr = BasketSerializer(Basket.objects.filter(user=request.user))
+            basket_sr = BasketSerializer(Basket.objects.filter(user=request.user), many=True)
 
             Orders.objects.create(
                 user=request.user,
@@ -88,7 +88,7 @@ def create_order(request):
                 address=address,
                 city=city,
                 index=index,
-                products=BasketSerializer.encode(basket_sr.encode()))
+                products=basket_sr.encode())
 
             Basket.objects.filter(user=request.user).delete()
 
