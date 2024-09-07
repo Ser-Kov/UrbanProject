@@ -9,7 +9,6 @@
 <!-- Page Content -->
 {% block content %}
     <div class="container">
-
     <div class="row">
 
         <div class="col-lg-3">
@@ -27,7 +26,6 @@
         <!-- /.col-lg-3 -->
 
         <div class="col-lg-9">
-
             <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -59,22 +57,28 @@
                 {% for product in products %}
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100">
-                            <a href="#">
+                            <a href="{% url 'products:card' product.id %}">
                                 <img class="card-img-top"
                                      src="{{product.image.url}}"
                                      alt="">
                             </a>
                             <div class="card-body">
                                 <h4 class="card-title">
-                                    <a href="#">{{product.name}}</a>
+                                    <a href="{% url 'products:card' product.id %}">
+                                        {{product.name}}
+                                    </a>
                                 </h4>
                                 <h5>{{product.price}} руб.</h5>
                                 <p class="card-text">{{product.description}}</p>
+                                {% if product.quantity == 0 %}
+                                    <p style="color: #AEAEAE"> (Нет в наличии) </p>
+                                {% endif %}
                             </div>
                             <div class="card-footer text-center">
                                 <a class="btn btn-outline-success"
-                                   href="{% url 'products:basket_add' product.id %}">
-                                    Отправить в корзину
+                                   href="{% if product.quantity > 0 %} {% url 'products:basket_add' product.id %}
+                                        {% else %} # {% endif %}">
+                                    Добавить в корзину
                                 </a>
                             </div>
                         </div>

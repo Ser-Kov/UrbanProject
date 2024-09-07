@@ -5,6 +5,7 @@ from products.forms import CreateOrderForm
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.contrib import messages
+from django.urls import reverse
 
 
 
@@ -47,13 +48,23 @@ def basket_add(request, product_id):
         basket.quantity += 1
         basket.save() # Результат сохраняется
 
-    return HttpResponseRedirect(request.META['HTTP_REFERER']) # Возвращает пользователя на ту же страницу
+    new_quantity = product.quantity - 1
+    Product.objects.filter(id=product_id).update(quantity=new_quantity) # Удаление одной шт. товара
+    messages.success(request, 'Товар успешно добавлен в корзину!')
+
+    return HttpResponseRedirect(request.META['HTTP_REFERER'])  # Возвращает пользователя на ту же страницу
 
 
 # Удаление корзины с продуктами
 @login_required
 def basket_remove(request, basket_id):
     basket = Basket.objects.get(id=basket_id)
+    product = Product.objects.get(basket=basket)
+
+    new_quantity = basket.quantity + product.quantity # Добавляем кол-во удаляемых продуктов к общему кол-ву данного продукта на складе
+
+    Product.objects.filter(basket=basket).update(quantity=new_quantity)
+
     basket.delete()
 
     return HttpResponseRedirect(request.META['HTTP_REFERER'])
@@ -102,3 +113,8 @@ def create_order(request):
         'form': form
     }
     return render(request, 'products/create_order.html', context)
+
+
+def card_product(request, product_id):
+    product = Product.objects.get(id=product_id)
+    return render(request, 'products/card_product.html', context={'product': product})
