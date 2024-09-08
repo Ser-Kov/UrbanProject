@@ -1,5 +1,5 @@
 from django.urls import path
-from users.views import login, registration, profile, logout
+from users.views import login, registration, profile, logout, baskets
 from products.views import create_order
 
 # Указываем приложение, с которым будут связаны пути.
@@ -10,5 +10,6 @@ urlpatterns = [
     path('registration/', registration, name='registration'),
     path('profile/', profile, name='profile'),
     path('logout/', logout, name='logout'),
-    path('create_order/', create_order, name='create_order')
+    path('create_order/', create_order, name='create_order'),
+    path('baskets/', baskets, name='baskets'),
 ]

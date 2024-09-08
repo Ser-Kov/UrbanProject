@@ -61,8 +61,7 @@ def profile(request):
     else:
         form = UserProfileForm(instance=request.user)
     context = {'title': title,
-               'form': form,
-               'baskets': Basket.objects.filter(user=request.user)}
+               'form': form}
     # В baskets (шаблон: 'products/baskets.html') передаем корзину текущего пользователя
     # во избежание представления корзин других пользователей
     return render(request, 'users/profile.html', context)
@@ -73,3 +72,8 @@ def logout(request):
     auth.logout(request)
     return HttpResponseRedirect(reverse('index'))
 
+def baskets(request):
+    title = 'Корзина'
+    context = {'title': title,
+               'baskets': Basket.objects.filter(user=request.user)}
+    return render(request, 'products/baskets.html', context)

@@ -5,9 +5,6 @@ from products.forms import CreateOrderForm
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.contrib import messages
-from django.urls import reverse
-
-
 
 
 # Контроллеры
@@ -89,8 +86,8 @@ def create_order(request):
             #          'quantity': item.quantity}
             #     )
             # products_json = json.dumps(products_list, ensure_ascii=False)
-
-            basket_sr = BasketSerializer(Basket.objects.filter(user=request.user), many=True)
+            basket = Basket.objects.filter(user=request.user)
+            basket_sr = BasketSerializer(basket)
 
             Orders.objects.create(
                 user=request.user,
