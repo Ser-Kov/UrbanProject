@@ -56,11 +56,6 @@ def basket_add(request, product_id):
 @login_required
 def basket_remove(request, basket_id):
     basket = Basket.objects.get(id=basket_id)
-    product = Product.objects.get(basket=basket)
-
-    new_quantity = basket.quantity + product.quantity # Добавляем кол-во удаляемых продуктов к общему кол-ву данного продукта на складе
-
-    Product.objects.filter(basket=basket).update(quantity=new_quantity)
 
     basket.delete()
 
@@ -78,16 +73,11 @@ def create_order(request):
             city = form.cleaned_data['city']
             index = form.cleaned_data['index']
 
-            # basket_items = Basket.objects.filter(user=request.user)
-            # products_list = []
-            # for item in basket_items:
-            #     products_list.append(
-            #         {'product': item.product.name,
-            #          'quantity': item.quantity}
-            #     )
-            # products_json = json.dumps(products_list, ensure_ascii=False)
-            basket = Basket.objects.filter(user=request.user)
-            basket_sr = BasketSerializer(basket)
+            baskets = Basket.objects.filter(user=request.user)
+            basket_sr = BasketSerializer(baskets, many=True)
+
+            from rest_framework.renderers import JSONRenderer
+            json_data = JSONRenderer().render(basket_sr.data)
 
             Orders.objects.create(
                 user=request.user,
@@ -96,7 +86,13 @@ def create_order(request):
                 address=address,
                 city=city,
                 index=index,
-                products=basket_sr.encode())
+                products=json_data,
+                total_sum=Basket.objects.filter(user=request.user).total_sum())
+
+            # Убираем кол-во продуктов на "складе" равное количеству продуктов в заказе
+            for obj in baskets:
+                new_quantity = Product.objects.get(name=obj.product.name).quantity - obj.quantity
+                Product.objects.filter(name=obj.product.name).update(quantity=new_quantity)
 
             Basket.objects.filter(user=request.user).delete()
 
@@ -111,6 +107,39 @@ def create_order(request):
     }
     return render(request, 'products/create_order.html', context)
 
+def orders_detail(request):
+    orders = Orders.objects.filter(user=request.user)
+
+    orders_list = []
+
+    for order in orders:
+        products = json.loads(order.products)
+        product_list = []
+
+        for dict_ in products:
+            product_list.append({
+                'product_name': dict_['product']['name'],
+                'product_price': dict_['product']['price'],
+                'quantity': dict_['quantity'],
+            })
+
+        orders_list.append({'id': order.id,
+                            'full_name': order.full_name,
+                             'email': order.email,
+                             'address': order.address,
+                             'city': order.city,
+                             'index': order.index,
+                             'products': product_list,
+                            'total_sum': order.total_sum
+                            })
+
+    context = {
+        'title': 'Заказы',
+        'orders': orders_list,
+
+    }
+
+    return render(request, 'users/orders_detail.html', context)
 
 def card_product(request, product_id):
     product = Product.objects.get(id=product_id)

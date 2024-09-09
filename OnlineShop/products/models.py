@@ -58,15 +58,18 @@ class Basket(models.Model):
         return self.product.price * self.quantity
 
 
+class ProductSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Product
+        fields = ('name', 'price')
+
+
 class BasketSerializer(serializers.ModelSerializer):
+    product = ProductSerializer()
+
     class Meta:
         model = Basket
-        fields = ('product.name', 'product.price', 'quantity')
-
-    def encode(self):
-        from rest_framework.renderers import JSONRenderer
-        json = JSONRenderer().render(self.data)
-        return json
+        fields = ('product', 'quantity')
 
 
 class Orders(models.Model):
@@ -77,6 +80,7 @@ class Orders(models.Model):
     city = models.CharField(max_length=30)
     index = models.CharField(max_length=6)
     products = models.TextField(null=True, blank=True)
+    total_sum = models.PositiveIntegerField(null=True, blank=True)
 
     class Meta:
         verbose_name = 'order'
