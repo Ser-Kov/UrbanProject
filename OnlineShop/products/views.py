@@ -45,8 +45,6 @@ def basket_add(request, product_id):
         basket.quantity += 1
         basket.save() # Результат сохраняется
 
-    new_quantity = product.quantity - 1
-    Product.objects.filter(id=product_id).update(quantity=new_quantity) # Удаление одной шт. товара
     messages.success(request, 'Товар успешно добавлен в корзину!')
 
     return HttpResponseRedirect(request.META['HTTP_REFERER'])  # Возвращает пользователя на ту же страницу
@@ -64,6 +62,8 @@ def basket_remove(request, basket_id):
 
 def create_order(request):
     title = 'Оформление заказа'
+    baskets = Basket.objects.filter(user=request.user)
+
     if request.method == 'POST':
         form = CreateOrderForm(data=request.POST)
         if form.is_valid():
@@ -73,7 +73,13 @@ def create_order(request):
             city = form.cleaned_data['city']
             index = form.cleaned_data['index']
 
-            baskets = Basket.objects.filter(user=request.user)
+            for obj in baskets:
+                product = Product.objects.get(name=obj.product.name)
+                if obj.quantity > product.quantity:
+                    messages.error(request, f'Вы не можете заказать {obj.quantity} шт. товара {obj.product.name} '
+                                            f'Данного товара на складе: {product.quantity} шт.')
+                    return HttpResponseRedirect(request.META['HTTP_REFERER'])
+
             basket_sr = BasketSerializer(baskets, many=True)
 
             from rest_framework.renderers import JSONRenderer
@@ -87,14 +93,14 @@ def create_order(request):
                 city=city,
                 index=index,
                 products=json_data,
-                total_sum=Basket.objects.filter(user=request.user).total_sum())
+                total_sum=baskets.total_sum())
 
             # Убираем кол-во продуктов на "складе" равное количеству продуктов в заказе
             for obj in baskets:
                 new_quantity = Product.objects.get(name=obj.product.name).quantity - obj.quantity
                 Product.objects.filter(name=obj.product.name).update(quantity=new_quantity)
 
-            Basket.objects.filter(user=request.user).delete()
+            baskets.delete()
 
             messages.success(request, 'Заказ оформлен!')
             return HttpResponseRedirect(request.META['HTTP_REFERER'])
@@ -102,7 +108,7 @@ def create_order(request):
         form = CreateOrderForm()
     context = {
         'title': title,
-        'baskets': Basket.objects.filter(user=request.user),
+        'baskets': baskets,
         'form': form
     }
     return render(request, 'products/create_order.html', context)
