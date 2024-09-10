@@ -81,14 +81,20 @@
                                 <p class="card-text">{{product.description}}</p>
                                 {% if product.quantity == 0 %}
                                     <p style="color: #AEAEAE"> (Нет в наличии) </p>
+                                {% else %}
+                                    <p style="color: #AEAEAE"> (В наличии: {{product.quantity}} шт.) </p>
                                 {% endif %}
                             </div>
                             <div class="card-footer text-center">
-                                <a class="btn btn-outline-success"
-                                   href="{% if product.quantity > 0 %} {% url 'products:basket_add' product.id %}
-                                        {% else %} # {% endif %}">
-                                    Добавить в корзину
-                                </a>
+                                <form action="{% if product.quantity > 0 %} {% url 'products:basket_add' product.id %}
+                                        {% else %} # {% endif %}" method="post">
+                                    {% csrf_token %}
+                                    <input class="number-text" type="number" min="1" max="{{product.quantity}}"
+                                           name="count" value="1">
+                                    <button class="btn btn-outline-success" type="submit">
+                                        Добавить в корзину
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>

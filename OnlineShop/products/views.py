@@ -1,5 +1,7 @@
 import json
 from django.shortcuts import render, HttpResponseRedirect
+from django.views.decorators.http import require_POST
+
 from products.models import ProductCategory, Product, Basket, Orders, BasketSerializer
 from products.forms import CreateOrderForm
 from django.contrib.auth.decorators import login_required
@@ -33,16 +35,19 @@ def products(request, category_id=None, page_number=1):
 
 # Применен декоратор доступа (проверяет request.user на авторизованность).
 @login_required
+@require_POST
 def basket_add(request, product_id):
     product = Product.objects.get(id=product_id) # Кнопка "Отправить в корзину" имеет product.id
                                                     # и при нажатии product.id передается в переменную product_id
     baskets = Basket.objects.filter(user=request.user, product=product) # Выберается корзина пользователя с таким продуктом
 
-    if not baskets.exists(): # Если такого товара нет в корзине пользователя, то он создается в кол-ве 1 шт.
-        Basket.objects.create(user=request.user, product=product, quantity=1)
+    count = int(request.POST.get('count', 1))
+
+    if not baskets.exists(): # Если такого товара нет в корзине пользователя, то он создается в кол-ве count
+        Basket.objects.create(user=request.user, product=product, quantity=count)
     else: # Если такой товар есть в корзине, то его число увеличивается на 1 шт.
         basket = baskets.first()
-        basket.quantity += 1
+        basket.quantity += count
         basket.save() # Результат сохраняется
 
     messages.success(request, 'Товар успешно добавлен в корзину!')

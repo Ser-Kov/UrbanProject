@@ -47,18 +47,19 @@
         <div class="btn-toolbar">
           <div class="action">
               <form action="{% if product.quantity > 0 %} {% url 'products:basket_add' product.id %} {% else %} #
-              {% endif %}">
+              {% endif %}" method="post">
+                {% csrf_token %}
+                <input class="number-text" type="number" min="1" max="{{product.quantity}}"
+                                           name="count" value="1">
               <button type="submit">
                   Добавить в корзину
               </button>
             </form>
           </div>
           <div class="action">
-            <form onclick="window.history.go(-1); return false;">
-              <button type="submit">
+              <button type="submit" onclick="window.history.back()">
                   Вернуться назад
               </button>
-            </form>
           </div>
         </div>
       </div>
