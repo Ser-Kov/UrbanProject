@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87784f04-f1bf-4220-a252-7d7a03b941f4" name="Changes" comment="Добавлена логика появления сообщения об ошибке, когда пользователь пытается оформить заказ, количество продуктов которого превышает значение на складе.&#10;&#10;Местами код стал проще.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="87784f04-f1bf-4220-a252-7d7a03b941f4" name="Changes" comment="Добавлены поля для ввода необходимого кол-ва товара перед помещением его в корзину. Исправлены недоработки">
       <change beforePath="$PROJECT_DIR$/OnlineShop/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShop/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineShop/products/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShop/products/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineShop/templates/products/card_product.html" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShop/templates/products/card_product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineShop/templates/products/create_order.html" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShop/templates/products/create_order.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineShop/templates/products/products.html" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShop/templates/products/products.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineShop/templates/users/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShop/templates/users/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineShop/templates/users/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShop/templates/users/registration.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -263,7 +257,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725959649227</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Добавлены поля для ввода необходимого кол-ва товара перед помещением его в корзину. Исправлены недоработки">
+      <option name="closed" value="true" />
+      <created>1725967876429</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1725967876429</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -282,6 +284,7 @@
     <MESSAGE value="Корзина пользователя вынесена в отдельную страницу.&#10;&#10;В меню навигации появилась кнопка с корзиной." />
     <MESSAGE value="Добавлены сериализаторы. Добавлена страница с заказами. Кол-во товаров на складе меняется в зависимости от кол-ва товаров в заказе, а не при добавлении в корзину или ее удалении." />
     <MESSAGE value="Добавлена логика появления сообщения об ошибке, когда пользователь пытается оформить заказ, количество продуктов которого превышает значение на складе.&#10;&#10;Местами код стал проще." />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлена логика появления сообщения об ошибке, когда пользователь пытается оформить заказ, количество продуктов которого превышает значение на складе.&#10;&#10;Местами код стал проще." />
+    <MESSAGE value="Добавлены поля для ввода необходимого кол-ва товара перед помещением его в корзину. Исправлены недоработки" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлены поля для ввода необходимого кол-ва товара перед помещением его в корзину. Исправлены недоработки" />
   </component>
 </project>
