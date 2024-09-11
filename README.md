@@ -22,7 +22,7 @@
 
 ```cd OnlineShop```
 
-5. ***Обязательно внести изменения в класс JSONRenderer фреймворка restframework***
+***5. Обязательно внести изменения в класс JSONRenderer фреймворка restframework***
 
   1) Переходим в файл views.py приложения products: OnlineShop/products/views.py
   2) На 91 линии наводим курсор на JSONRenderer() и нажимаем комбинацию Ctrl + ЛКМ
