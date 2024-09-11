@@ -49,8 +49,7 @@
 
 ![Снимок экрана (236)](https://github.com/user-attachments/assets/2ce9ba5f-e6a5-48b5-a6dc-cd86a4e5e6d4)
 
-![Снимок экрана (237)](https://github.com/user-attachments/assets/9997f93e-5474-41a3-96b7-c901e775a243)
-
+![Снимок экрана (237)](https://github.com/user-attachments/assets/43cf58b5-9e38-40ee-9a3b-f3e06635a293)
 **После оформления заказа кол-во товаров на складе изменится в соответствии с кол-вом товаров в заказе**
 
 Вернуться в [README.md](../README.md)
