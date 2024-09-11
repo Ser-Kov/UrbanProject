@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87784f04-f1bf-4220-a252-7d7a03b941f4" name="Changes" comment="На странице каталога можно вернуться ко всем товарам, нажав кнопку &quot;Все&quot; слева, в поле с категориями" />
+    <list default="true" id="87784f04-f1bf-4220-a252-7d7a03b941f4" name="Changes" comment="Обновлен файл requirements.txt для контроля версий" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -270,7 +270,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725968241964</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Обновлен файл requirements.txt для контроля версий">
+      <option name="closed" value="true" />
+      <created>1726053039609</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1726053039609</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -291,6 +299,7 @@
     <MESSAGE value="Добавлена логика появления сообщения об ошибке, когда пользователь пытается оформить заказ, количество продуктов которого превышает значение на складе.&#10;&#10;Местами код стал проще." />
     <MESSAGE value="Добавлены поля для ввода необходимого кол-ва товара перед помещением его в корзину. Исправлены недоработки" />
     <MESSAGE value="На странице каталога можно вернуться ко всем товарам, нажав кнопку &quot;Все&quot; слева, в поле с категориями" />
-    <option name="LAST_COMMIT_MESSAGE" value="На странице каталога можно вернуться ко всем товарам, нажав кнопку &quot;Все&quot; слева, в поле с категориями" />
+    <MESSAGE value="Обновлен файл requirements.txt для контроля версий" />
+    <option name="LAST_COMMIT_MESSAGE" value="Обновлен файл requirements.txt для контроля версий" />
   </component>
 </project>
