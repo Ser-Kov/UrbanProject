@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87784f04-f1bf-4220-a252-7d7a03b941f4" name="Changes" comment="Обновлен файл requirements.txt для контроля версий" />
+    <list default="true" id="87784f04-f1bf-4220-a252-7d7a03b941f4" name="Changes" comment="Файл requirements.txt перенесен в корневую директорию">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,11 +53,11 @@
       <recent name="C:\Python_Education\UrbanProject\OnlineShop" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Python_Education\UrbanProject" />
       <recent name="C:\Python_Education\UrbanProject\OnlineShop\templates\products" />
       <recent name="C:\Python_Education\UrbanProject\OnlineShop\templates" />
       <recent name="C:\Python_Education\UrbanProject\OnlineShop\products\templates\products" />
       <recent name="C:\Python_Education\UrbanProject\OnlineShop\templates\users" />
-      <recent name="C:\Python_Education\UrbanProject\OnlineShop" />
     </key>
   </component>
   <component name="RunManager" selected="Python.main">
@@ -278,7 +280,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726053039609</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Файл requirements.txt перенесен в корневую директорию">
+      <option name="closed" value="true" />
+      <created>1726053419458</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1726053419458</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -300,6 +310,7 @@
     <MESSAGE value="Добавлены поля для ввода необходимого кол-ва товара перед помещением его в корзину. Исправлены недоработки" />
     <MESSAGE value="На странице каталога можно вернуться ко всем товарам, нажав кнопку &quot;Все&quot; слева, в поле с категориями" />
     <MESSAGE value="Обновлен файл requirements.txt для контроля версий" />
-    <option name="LAST_COMMIT_MESSAGE" value="Обновлен файл requirements.txt для контроля версий" />
+    <MESSAGE value="Файл requirements.txt перенесен в корневую директорию" />
+    <option name="LAST_COMMIT_MESSAGE" value="Файл requirements.txt перенесен в корневую директорию" />
   </component>
 </project>

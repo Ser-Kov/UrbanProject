@@ -124,10 +124,10 @@ def orders_detail(request):
     orders_list = []
 
     for order in orders:
-        products = json.loads(order.products)
+        products_detail = json.loads(order.products)
         product_list = []
 
-        for dict_ in products:
+        for dict_ in products_detail:
             product_list.append({
                 'product_name': dict_['product']['name'],
                 'product_price': dict_['product']['price'],
