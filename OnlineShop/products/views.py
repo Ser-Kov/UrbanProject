@@ -2,7 +2,7 @@ import json
 from django.shortcuts import render, HttpResponseRedirect
 from django.views.decorators.http import require_POST
 
-from products.models import ProductCategory, Product, Basket, Orders, BasketSerializer
+from products.models import ProductCategory, Product, Basket, Orders
 from products.forms import CreateOrderForm
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
@@ -85,10 +85,16 @@ def create_order(request):
                                             f'Данного товара на складе: {product.quantity} шт.')
                     return HttpResponseRedirect(request.META['HTTP_REFERER'])
 
-            basket_sr = BasketSerializer(baskets, many=True)
+            products_list = []
+            for item in baskets:
+                products_list.append({
+                    'name': item.product.name,
+                    'quantity': item.quantity,
+                    'price': str(item.product.price),
+                })
 
-            from rest_framework.renderers import JSONRenderer
-            json_data = JSONRenderer().render(basket_sr.data)
+            # Сериализуем список товаров в JSON
+            products_json = json.dumps(products_list, ensure_ascii=False)
 
             Orders.objects.create(
                 user=request.user,
@@ -97,7 +103,7 @@ def create_order(request):
                 address=address,
                 city=city,
                 index=index,
-                products=json_data,
+                products=products_json,
                 total_sum=baskets.total_sum())
 
             # Убираем кол-во продуктов на "складе" равное количеству продуктов в заказе
@@ -129,9 +135,9 @@ def orders_detail(request):
 
         for dict_ in products_detail:
             product_list.append({
-                'product_name': dict_['product']['name'],
-                'product_price': dict_['product']['price'],
-                'quantity': dict_['quantity'],
+                'product_name': dict_.get("name"),
+                'product_price': dict_.get("price"),
+                'quantity': dict_.get("quantity"),
             })
 
         orders_list.append({'id': order.id,
@@ -147,7 +153,6 @@ def orders_detail(request):
     context = {
         'title': 'Заказы',
         'orders': orders_list,
-
     }
 
     return render(request, 'users/orders_detail.html', context)
