@@ -120,7 +120,7 @@ span.price {
         <div class="container">
             <div class="row">
                 <div class="col-50">
-                    <h3>Адрес доставки</h3>
+                    <h3>Адрес доставки (заказ № {{order.id}})</h3>
                     <label for="order.full_name"><i class="fa fa-user"></i> <strong>ФИО</strong></label>
                     {{ order.full_name }}
                     <label for="order.email"><i class="fa fa-envelope"></i> <strong>Email</strong></label>
@@ -150,7 +150,8 @@ span.price {
                 </div>
             </div>
         </div>
-            <input type="submit" value="Проблема с заказом? Напишите нам!" class="btn">
+            <input type="submit" value="Проблема с заказом? Напишите нам!"
+                   class="btn" onclick="window.open('https://t.me/ser_kovalevsky')">
         </div>
     </div>
 

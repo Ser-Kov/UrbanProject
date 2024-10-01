@@ -45,7 +45,7 @@ def basket_add(request, product_id):
 
     if not baskets.exists(): # Если такого товара нет в корзине пользователя, то он создается в кол-ве count
         Basket.objects.create(user=request.user, product=product, quantity=count)
-    else: # Если такой товар есть в корзине, то его число увеличивается на 1 шт.
+    else: # Если такой товар есть в корзине, то его число увеличивается на count.
         basket = baskets.first()
         basket.quantity += count
         basket.save() # Результат сохраняется

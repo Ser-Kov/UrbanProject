@@ -62,8 +62,6 @@ def profile(request):
         form = UserProfileForm(instance=request.user)
     context = {'title': title,
                'form': form}
-    # В baskets (шаблон: 'products/baskets.html') передаем корзину текущего пользователя
-    # во избежание представления корзин других пользователей
     return render(request, 'users/profile.html', context)
 
 
@@ -76,4 +74,6 @@ def baskets(request):
     title = 'Корзина'
     context = {'title': title,
                'baskets': Basket.objects.filter(user=request.user)}
+    # В baskets передаем корзину текущего пользователя
+    # во избежание представления корзин других пользователей
     return render(request, 'products/baskets.html', context)
